@@ -83,7 +83,7 @@ export default abstract class BaseController {
 
   protected dispose() {
     this.disposed = true
-    this.magnifier.dispose()
+    this.magnifier.remove()
     this.model.lines.forEach((line) => this.removeLine(line))
 
     const fiveElement = this.five.getElement()
