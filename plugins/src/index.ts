@@ -1,6 +1,4 @@
 // 方法导出
-export * from './shared-utils/five/useFivePlugin'
-
 export * from './ModelViewPlugin'
 
 export * from './CSS3DRenderPlugin'

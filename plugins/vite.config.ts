@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
+// import reactRefresh from '@vitejs/plugin-react-refresh'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { resolve } from "path";
 // import alias from '@rollup/plugin-alias'
@@ -7,7 +7,7 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh(), svelte()],
+  plugins: [svelte()],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

@@ -6,7 +6,8 @@
   },
   "workspaces": [
     "plugins",
-    "examples"
+    "examples",
+    "vue-examples"
   ],
   "scripts": {
     "start": "yarn bootstrap && yarn build:plugins && yarn start:examples",
@@ -16,6 +17,7 @@
     "bootstrap": "lerna bootstrap && lerna link",
     "start:plugins": "cd plugins && yarn run build:dev",
     "start:examples": "yarn workspace examples start",
+    "start:vue-examples": "yarn workspace vue-examples start",
     "docs": "cd plugins && yarn run build:docs",
     "deploy": "sh deploy.sh",
     "test": "sh test.sh"
