@@ -36,7 +36,6 @@ const fiveInitArgs = {
     <FiveCanvas :width="width" :height="height" />
     <ModelViewPluginUse />
     <TopviewFloorplanPluginUse />
-    <div class="plugin-full-screen-container" />
   </FiveProvider>
 </template>
 

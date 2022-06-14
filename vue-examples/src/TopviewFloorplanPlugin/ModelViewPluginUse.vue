@@ -14,7 +14,6 @@ export default defineComponent({
 
     watch(modelState, (newState, oldState) => {
       if(newState && newState === "Loaded") {
-        console.log(five)
         five.plugins.modelViewPlugin.appendTo(box.value)
       }
     })
