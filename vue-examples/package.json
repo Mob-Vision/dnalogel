@@ -13,8 +13,9 @@
   "devDependencies": {
     "@realsee/dnalogel": "2.0.0-alpha.29",
     "@realsee/five": "^5.0.0-alpha.127",
-    "three": "0.117.1",
     "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "three": "0.117.1",
     "vite": "^2.9.9"
   }
 }
