@@ -4,11 +4,12 @@ import TopviewFloorplanPlugin from "@realsee/dnalogel/libs/floorplan/TopviewFloo
 import { useWindowDimensions } from "../components/useWindowDimensions"
 
 import { parseWork } from "@realsee/five";
+import { FiveProvider, FiveCanvas } from "@realsee/five/vue";
 
 import ModelViewPluginUse from './ModelViewPluginUse.vue';
 import TopviewFloorplanPluginUse from './TopviewFloorplanPluginUse.vue';
 
-import { work } from "../../../open-works/virtual/81gmMq5a7zbF9leWMk/work";
+import { work } from "../../../examples/open-works/virtual/81gmMq5a7zbF9leWMk/work";
 
 const { width, height } = useWindowDimensions()
 
@@ -21,9 +22,10 @@ const fiveInitArgs = {
     [
       TopviewFloorplanPlugin,
       'topviewFloorplanPlugin',
-      {}
+      {
+        selector: '.plugin-full-screen-container'
+      }
     ]
-
   ]
 }
 
@@ -31,9 +33,10 @@ const fiveInitArgs = {
 
 <template>
   <FiveProvider :work="work" :fiveInitArgs="fiveInitArgs">
-    <FiveCanvas :width="width" :height="height"></FiveCanvas>
+    <FiveCanvas :width="width" :height="height" />
     <ModelViewPluginUse />
-<!--    <TopviewFloorplanPluginUse />-->
+    <TopviewFloorplanPluginUse />
+    <div class="plugin-full-screen-container" />
   </FiveProvider>
 </template>
 

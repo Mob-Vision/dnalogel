@@ -4,9 +4,8 @@
 <script>
 import { defineComponent, ref, onMounted, watch } from "vue";
 import { useFiveState, unsafe__useFiveInject, useFiveModelReadyState } from "@realsee/five/vue";
-import data from "../works/index"
+import { floorplanServerData } from "../../../examples/open-works/virtual/81gmMq5a7zbF9leWMk/floorplanServerData";
 
-const { floorplanServerData } = data
 export default defineComponent({
     name: "TopviewFloorplanPluginUse",
     setup() {
@@ -14,7 +13,12 @@ export default defineComponent({
         const five = unsafe__useFiveInject();
         const modelState = useFiveModelReadyState();
         const topviewFloorplanPlugin = five.plugins.topviewFloorplanPlugin;
-        topviewFloorplanPlugin.load(floorplanServerData);
+
+      watch(modelState, (cur, pre) => {
+        if(cur === 'Loaded') topviewFloorplanPlugin.load(floorplanServerData);
+
+
+      })
 
         return {
             setFiveState
